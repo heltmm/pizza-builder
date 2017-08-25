@@ -19,6 +19,7 @@ Pizza.prototype.print = function(){
       meatAndVeg.push(topping);
     })
   })
+  console.log(meatAndVeg)
   //print out on webpage the current pizza
   $("#currentPizza").html("<h2>" + this.size + " " + this.crust + " pizza with " + this.sauce +"</h2><br><h3>Toppings: </h3><ul id='toppings'>" + "</ul><br><h3>Cost: "+ this.price + "</h3>" );
   meatAndVeg.forEach(function(topping){
@@ -29,8 +30,9 @@ Pizza.prototype.print = function(){
 Cart.prototype.printCart = function(){
   $("#cart").append("<h2> Order for: " + this.for +"</h2>")
   this.pizzas.forEach(function(pizza){
-    $("#cart").append('<div class="well">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings + ", Price: " + pizza.price + '</div>')
+    $("#cart").append('<div class="well">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings[0] + pizza.toppings[1] + ", Price: " + pizza.price + '</div>')
   })
+  $("#cart").append("<h2> Total Price: " + this.total +"</h2>")
 }
 Pizza.prototype.cost = function(){
   if(this.size === "large"){
@@ -49,7 +51,11 @@ Pizza.prototype.cost = function(){
 
 }
 Cart.prototype.cartCost = function(){
-
+  var countTotal = 0;
+  this.pizzas.forEach(function(pizza){
+    countTotal += pizza.price;
+  })
+  this.total = countTotal;
 }
 //front end
 $(document).ready(function() {
@@ -93,9 +99,9 @@ $(document).ready(function() {
      $("#currentPizza").hide();
   });
   $("#viewCart").click(function(event){
+    newCart.cartCost();
     newCart.printCart();
     $("#cart").show();
-    $("#checkout").show();
     $("#newPizza").hide();
     $("#pizzaInput").hide();
     $("#currentPizza").hide();

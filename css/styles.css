@@ -1,4 +1,4 @@
-#pizzaInput, #viewCart, #newPizza, #checkout{
+#pizzaInput, #viewCart, #newPizza {
   display: none;
 }
 #viewCart, #newPizza {

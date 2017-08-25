@@ -1,4 +1,4 @@
-#pizzaInput, #viewCart, #newPizza {
+#pizzaInput, #viewCart, #newPizza, #newOrder {
   display: none;
 }
 #viewCart, #newPizza {
@@ -19,4 +19,7 @@ body{
 }
 #sizeOptions img{
   float: right;
+}
+#cart img{
+  width: 20%;
 }

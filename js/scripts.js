@@ -30,7 +30,7 @@ Pizza.prototype.print = function(){
 Cart.prototype.printCart = function(){
   $("#cart").append("<h2> Order for: " + this.for +"</h2>");
   this.pizzas.forEach(function(pizza){
-    $("#cart").append('<div class="well"><img src="img/pizza.png" alt="pizza">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings[0] + "," + pizza.toppings[1] + " Price: " + pizza.price + '</div>');
+    $("#cart").append('<div class="well"><img src="img/pizza.png" alt="pizza">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings[0] + " ," + pizza.toppings[1] + " Price: " + pizza.price + '</div>');
   });
   $("#cart").append("<h2> Total Price: " + this.total +"</h2>");
 };
@@ -101,9 +101,13 @@ $(document).ready(function() {
     newCart.cartCost();
     newCart.printCart();
     $("#cart").show();
+    $("#newOrder").show();
     $("#newPizza").hide();
     $("#pizzaInput").hide();
     $("#currentPizza").hide();
     $("#viewCart").hide();
+  });
+  $("#newOrder").click(function(event){
+    location.reload();
   });
 });

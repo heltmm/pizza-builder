@@ -35,15 +35,15 @@ Cart.prototype.printCart = function(){
   $("#cart").append("<h2> Total Price: " + this.total +"</h2>");
 };
 Pizza.prototype.cost = function(){
-  if(this.size === "large"){
+  if(this.size === "Large"){
     this.price += 6.99;
     this.price += this.toppings[0].length * 1.5;
     this.price += this.toppings[1].length * 1;
-  }else if(this.size === "medium"){
+  }else if(this.size === "Medium"){
     this.price += 4.99;
     this.price += this.toppings[0].length * 1;
     this.price += this.toppings[1].length * .75;
-  }else if(this.size === "small"){
+  }else if(this.size === "Small"){
     this.price += 3.99;
     this.price += this.toppings[0].length * .75;
     this.price += this.toppings[1].length * .5;

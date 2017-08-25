@@ -8,6 +8,7 @@
 
 _This webpage takes user input and creates a pizza object which then calls a prototype to generate the cost of the pizza and print the pizza on the page.  That pizza object is then put in a cart object and a prototype is called to generate the total cost of multiple pizzas._
 
+## Specs
 | **Specification**                         | **Input**                                                                                     | **Output**                                                                                            |
 |-------------------------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | Take user input and make a pizza object   | size = large, crust = thin crust, sauce = red, toppings = onion, olive                        | pizza{ size= "large"; crust = "thin crust"; sauce= "red"; toppings=["onion","olive"]; price; }        |

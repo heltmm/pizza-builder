@@ -4,3 +4,19 @@
 #viewCart, #newPizza {
   margin-top: 20px;
 }
+body{
+  background: linear-gradient(to right, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.jumbotron{
+  background: linear-gradient(to right, #eb5757, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+/*.well {
+  background-color: cadetblue;
+}*/
+#cartInput img{
+  width: 100%;
+}
+#sizeOptions img{
+  float: right;
+}

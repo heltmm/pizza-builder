@@ -13,50 +13,49 @@ function Pizza(size, crust, sauce, topings) {
 };
 Pizza.prototype.print = function(){
   // combine meat and veg toppings
-  var meatAndVeg = []
+  var meatAndVeg = [];
   this.toppings.forEach(function(toppingArray){
     toppingArray.forEach(function(topping){
       meatAndVeg.push(topping);
-    })
-  })
-  console.log(meatAndVeg)
+    });
+  });
+
   //print out on webpage the current pizza
-  $("#currentPizza").html("<h2>" + this.size + " " + this.crust + " pizza with " + this.sauce +"</h2><br><h3>Toppings: </h3><ul id='toppings'>" + "</ul><br><h3>Cost: "+ this.price + "</h3>" );
+  $("#currentPizza").html("<h2>" + this.size + " " + this.crust + " pizza with " + this.sauce +"</h2><br><img src='img/pizza.png' alt='pizza'><h3>Toppings: </h3><ul id='toppings'>" + "</ul><br><h3>Cost: "+ this.price + "</h3>" );
   meatAndVeg.forEach(function(topping){
     return $("#toppings").append("<li>" + topping + "</li>");
   })
 }
 //print each pizza and total on website
 Cart.prototype.printCart = function(){
-  $("#cart").append("<h2> Order for: " + this.for +"</h2>")
+  $("#cart").append("<h2> Order for: " + this.for +"</h2>");
   this.pizzas.forEach(function(pizza){
-    $("#cart").append('<div class="well">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings[0] + pizza.toppings[1] + ", Price: " + pizza.price + '</div>')
-  })
-  $("#cart").append("<h2> Total Price: " + this.total +"</h2>")
-}
+    $("#cart").append('<div class="well"><img src="img/pizza.png" alt="pizza">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings[0] + "," + pizza.toppings[1] + " Price: " + pizza.price + '</div>');
+  });
+  $("#cart").append("<h2> Total Price: " + this.total +"</h2>");
+};
 Pizza.prototype.cost = function(){
   if(this.size === "large"){
     this.price += 6.99;
-    this.price += this.toppings[0].length * 1.5
-    this.price += this.toppings[1].length * 1
+    this.price += this.toppings[0].length * 1.5;
+    this.price += this.toppings[1].length * 1;
   }else if(this.size === "medium"){
     this.price += 4.99;
-    this.price += this.toppings[0].length * 1
-    this.price += this.toppings[1].length * .75
+    this.price += this.toppings[0].length * 1;
+    this.price += this.toppings[1].length * .75;
   }else if(this.size === "small"){
     this.price += 3.99;
-    this.price += this.toppings[0].length * .75
-    this.price += this.toppings[1].length * .5
-  }
-
-}
+    this.price += this.toppings[0].length * .75;
+    this.price += this.toppings[1].length * .5;
+  };
+};
 Cart.prototype.cartCost = function(){
   var countTotal = 0;
   this.pizzas.forEach(function(pizza){
     countTotal += pizza.price;
-  })
+  });
   this.total = countTotal;
-}
+};
 //front end
 $(document).ready(function() {
   //takes user name as input and creats a new cart for that name
@@ -82,7 +81,7 @@ $(document).ready(function() {
     //takes all input and creats a new pizza and pushes that pizza into the cart
     newPizza = new Pizza (size, crust, sauce, toppings);
     newPizza.cost();
-    newCart.pizzas.push(newPizza)
+    newCart.pizzas.push(newPizza);
     $("#pizzaInput").hide();
     $("#currentPizza").show();
     $("#viewCart").show();

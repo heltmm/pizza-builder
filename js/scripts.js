@@ -87,6 +87,7 @@ $(document).ready(function() {
     $("#viewCart").show();
     $("#newPizza").show();
     newPizza.print();
+    console.log(newPizza)
   });
    $("#newPizza").click(function(event){
      //removes checkes from checkbox inputs

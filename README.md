@@ -1,26 +1,26 @@
-# _Ping Pong_
+# _Pizza Builder_
 
-#### _Code Review Week 3, 08.18.2017_
+#### _Code Review Week 4, 08.25.2017_
 
 #### By _**Mark Helt**_
 
 ## Description
 
-_This webpage takes a number inputted by the user and displays a text version of the game Ping Pong on the page the length of the number inputted._
+_This webpage takes user input and creates a pizza object which then calls a prototype to generate the cost of the pizza and print the pizza on the page.  That pizza object is then put in a cart object and a prototype is called to generate the total cost of multiple pizzas._
 
 ## Specs
-| **Specification**                                     | **Input** | **Output**  |
-|-------------------------------------------------------|-----------|-------------|
-| Count to a specific number                            | 3         | [1, 2, 3]   |
-| Numbers divisible by 3 are replaced with "ping"       | 3         | "ping"      |
-| Numbers divisible by 5 are replaced with "pong"       | 5         | "pong"      |
-| Numbers divisible by 15 are replaced with "ping-pong" | 15        | "ping-pong" |
+| **Specification**                         | **Input**                                                                            | **Output**                                                                                      |
+|-------------------------------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Take user input and make a pizza object   | size = large crust = thin crust sauce = red toppings = onion, olive                  | pizza{ size= "large" crust = "thin crust" sauce= "red" toppings=["onion","olive"] price }       |
+| Determine price based on pizza parameters | pizza {size= "large"crust = "thin crust"sauce= "red"toppings=["onion","olive"]price} | pizza{ size= "large" crust = "thin crust" sauce= "red" toppings=["onion","olive"] price = 8.99} |
+| Add pizza to a cart object                | pizza1                                                                               | Cart{ pizzas = [pizza1] total }                                                                 |
+| Determine total base on cart parameters   | Cart                                                                                 | Cart{ pizzas =[pizza1] total = 8.99 }                                                           |
 
 ## Setup
 
 * _Open Web Browser._
-* _type https://heltmm.github.io/ping-pong into url bar._
-* _Or click this link: [Ping Pong](https://heltmm.github.io/ping-pong)_
+* _type https://heltmm.github.io/pizza-builder into url bar._
+* _Or click this link: [Pizza Builder](https://heltmm.github.io/pizza-builder)_
 
 ## Known Bugs
 

@@ -31,7 +31,7 @@ $(document).ready(function() {
       return this.value;
     }).get();
     var toppings = [meatToppings, nonMeatToppings];
-    //take all input and creat a new pizza then push that pizza into the cart
+    //takes all input and creats a new pizza and pushes that pizza into the cart
     newPizza = new Pizza (size, crust, sauce, toppings);
     newCart.pizzas.push(newPizza)
     $("#pizzaInput").hide();
@@ -45,6 +45,13 @@ $(document).ready(function() {
         this.checked = false;
       });
      $("#pizzaInput").show();
-
+     $("#newPizza").hide();
+  });
+  $("#viewCart").click(function(event){
+    $("#cart").show();
+    $("#checkout").show();
+    $("#newPizza").hide();
+    $("#pizzaInput").hide();
+    $("#viewCart").hide();
   });
 });

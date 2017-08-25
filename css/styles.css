@@ -1,3 +1,6 @@
 #pizzaInput, #viewCart, #newPizza, #checkout{
   display: none;
 }
+#viewCart, #newPizza {
+  margin-top: 20px;
+}

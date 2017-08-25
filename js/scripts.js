@@ -1,6 +1,9 @@
 //backend
-function Pizza(name, size, crust, sauce, topings) {
+function Cart(name) {
   this.for = name;
+  this.pizzas = [];
+}
+function Pizza(size, crust, sauce, topings) {
   this.size = size;
   this.crust = crust;
   this.sauce = sauce;

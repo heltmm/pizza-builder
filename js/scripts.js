@@ -20,6 +20,12 @@ $(document).ready(function() {
   });
   $("#pizzaInput").submit(function(event){
     event.preventDefault();
+    var size = $("input:radio[name=sizeInput]:checked").val();
+    console.log(size)
+    var crust = $("#crustInput").val();
+    console.log(crust)
+    var sauce = $("#sauceInput").val();
+    console.log(sauce)
     var meatToppings = $("input:checkbox[name=meatTopping]:checked").map(function(){
       return this.value;
     }).get();
@@ -28,6 +34,10 @@ $(document).ready(function() {
       return this.value;
     }).get();
     console.log(nonMeatToppings)
-
+    var toppings = [meatToppings, nonMeatToppings];
+    newPizza = new Pizza (size, crust, sauce, toppings);
+    console.log(newPizza)
+    newCart.pizzas.push(newPizza)
+    console.log(newCart)
   });
 });

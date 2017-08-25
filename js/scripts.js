@@ -1,6 +1,7 @@
 //backend
 function Cart(name) {
   this.for = name;
+  this.total = 0.0;
   this.pizzas = [];
 };
 function Pizza(size, crust, sauce, topings) {
@@ -8,7 +9,7 @@ function Pizza(size, crust, sauce, topings) {
   this.crust = crust;
   this.sauce = sauce;
   this.toppings = topings;
-  this.price = 0;
+  this.price = 0.0;
 };
 Pizza.prototype.print = function(){
   // combine meat and veg toppings
@@ -26,9 +27,29 @@ Pizza.prototype.print = function(){
 }
 //print each pizza and total on website
 Cart.prototype.printCart = function(){
+  $("#cart").append("<h2> Order for: " + this.for +"</h2>")
   this.pizzas.forEach(function(pizza){
     $("#cart").append('<div class="well">' + pizza.size + ", " + pizza.crust + ", " + pizza.sauce + ", " + pizza.toppings + ", Price: " + pizza.price + '</div>')
   })
+}
+Pizza.prototype.cost = function(){
+  if(this.size === "large"){
+    this.price += 6.99;
+    this.price += this.toppings[0].length * 1.5
+    this.price += this.toppings[1].length * 1
+  }else if(this.size === "medium"){
+    this.price += 4.99;
+    this.price += this.toppings[0].length * 1
+    this.price += this.toppings[1].length * .75
+  }else if(this.size === "small"){
+    this.price += 3.99;
+    this.price += this.toppings[0].length * .75
+    this.price += this.toppings[1].length * .5
+  }
+
+}
+Cart.prototype.cartCost = function(){
+
 }
 //front end
 $(document).ready(function() {
@@ -54,6 +75,7 @@ $(document).ready(function() {
     var toppings = [meatToppings, nonMeatToppings];
     //takes all input and creats a new pizza and pushes that pizza into the cart
     newPizza = new Pizza (size, crust, sauce, toppings);
+    newPizza.cost();
     newCart.pizzas.push(newPizza)
     $("#pizzaInput").hide();
     $("#currentPizza").show();
@@ -68,6 +90,7 @@ $(document).ready(function() {
       });
      $("#pizzaInput").show();
      $("#newPizza").hide();
+     $("#currentPizza").hide();
   });
   $("#viewCart").click(function(event){
     newCart.printCart();

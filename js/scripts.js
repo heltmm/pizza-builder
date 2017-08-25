@@ -16,28 +16,35 @@ $(document).ready(function() {
     event.preventDefault();
     var name = $("#nameInput").val();
     newCart = new Cart(name);
-    console.log(newCart)
+    $("#pizzaInput").show();
+    $("#cartInput").hide();
   });
   $("#pizzaInput").submit(function(event){
     event.preventDefault();
     var size = $("input:radio[name=sizeInput]:checked").val();
-    console.log(size)
     var crust = $("#crustInput").val();
-    console.log(crust)
     var sauce = $("#sauceInput").val();
-    console.log(sauce)
     var meatToppings = $("input:checkbox[name=meatTopping]:checked").map(function(){
       return this.value;
     }).get();
-    console.log(meatToppings);
     var nonMeatToppings = $("input:checkbox[name=nonMeatTopping]:checked").map(function(){
       return this.value;
     }).get();
-    console.log(nonMeatToppings)
     var toppings = [meatToppings, nonMeatToppings];
+    //take all input and creat a new pizza then push that pizza into the cart
     newPizza = new Pizza (size, crust, sauce, toppings);
-    console.log(newPizza)
     newCart.pizzas.push(newPizza)
-    console.log(newCart)
+    $("#pizzaInput").hide();
+    $("#currentPizza").show();
+    $("#viewCart").show();
+    $("#newPizza").show();
+  });
+   $("#newPizza").click(function(event){
+     //removes checkes from checkbox inputs
+     $('input[type=checkbox]').each(function(){
+        this.checked = false;
+      });
+     $("#pizzaInput").show();
+
   });
 });

@@ -14,68 +14,107 @@
         <button class="btn" id="delivery">Delivery</button>
         <button class="btn" id="delivery">Carry Out</button>
       </div>
-      <form id="sizeForm">
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value="small">
-            Small(10")
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value="medium">
-            Medium(12")
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="size" value="large" checked>
-            Large(14")
-          </label>
-        </div>
-      </form>
-      <form id="crustForm">
-        <select class="form-control" id="crust">
-          <option value="1">Hand Tossed</option>
-          <option value="2">Handmade Pan</option>
-          <option value="3">Thin crust</option>
-          <option value="4">Gluten Free</option>
-        </select>
-      </form>
-      <form id="sauceForm">
-        <select class="form-control" id="crust">
-          <option value="Roma Tomato Sauce">Roma Tomato Sauce</option>
-          <option value="Garlic and Olive oil">Garlic and Olive oil</option>
-          <option value="Parmesan White Sauce">Parmesan White Sauce</option>
-          <option value="No Sauce">No Sauce</option>
-        </select>
-      </form>
-      <form id="toppingsForm">
-        <div class="row">
-          <div class="col-md-6">
-            <h3>Meats</h3>
-            <input type="checkbox" name="meatTopping" value="pepperoni">Pepperoni<br>
-            <input type="checkbox" name="meatTopping" value="ham">Ham<br>
-            <input type="checkbox" name="meatTopping" value="salami">Salami<br>
-            <input type="checkbox" name="meatTopping" value="sausage">Sausage<br>
-            <input type="checkbox" name="meatTopping" value="steak">Steak<br>
-            <input type="checkbox" name="meatTopping" value="bacon">Bacon<br>
-            <input type="checkbox" name="meatTopping" value="chicken">Chicken<br>
+      <form id="pizzaInput">
+        <div id="sizeOptions">
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="small">
+              Small(10")
+            </label>
           </div>
-          <div class="col-md-6">
-            <h3>Non-Meats</h3>
-            <input type="checkbox" name="nonMeatTopping" value="bannana peppers">Banana Peppers<br>
-            <input type="checkbox" name="nonMeatTopping" value="jalepeno">Jalepeno<br>
-            <input type="checkbox" name="nonMeatTopping" value="pineapple">Pineapple<br>
-            <input type="checkbox" name="nonMeatTopping" value="red peppers">Roasted Red Pepper<br>
-            <input type="checkbox" name="nonMeatTopping" value="tomatoe">Tomatoe<br>
-            <input type="checkbox" name="nonMeatTopping" value="mushrooms">Mushrooms<br>
-            <input type="checkbox" name="nonMeatTopping" value="olives">Black Olives<br>
-            <input type="checkbox" name="nonMeatTopping" value="onion">Onion<br>
-            <input type="checkbox" name="nonMeatTopping" value="spinach">Spinach<br>
-            <input type="checkbox" name="nonMeatTopping" value="feta">Feta<br>
-            <input type="checkbox" name="nonMeatTopping" value="green peppers">Green Peppers<br>
-            <input type="checkbox" name="nonMeatTopping" value="avacado">Avacado<br>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="medium">
+              Medium(12")
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="large" checked>
+              Large(14")
+            </label>
+          </div>
+        </div>
+        <div id="crustOptions">
+          <select class="form-control" id="crust">
+            <option value="1">Hand Tossed</option>
+            <option value="2">Handmade Pan</option>
+            <option value="3">Thin crust</option>
+            <option value="4">Gluten Free</option>
+          </select>
+        </div>
+        <div id="sauceOptions">
+          <select class="form-control" id="crust">
+            <option value="Roma Tomato Sauce">Roma Tomato Sauce</option>
+            <option value="Garlic and Olive oil">Garlic and Olive oil</option>
+            <option value="Parmesan White Sauce">Parmesan White Sauce</option>
+            <option value="No Sauce">No Sauce</option>
+          </select>
+        </div>
+        <div id="toppingsOptions">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Meats</h3>
+              <label>
+                <input type="checkbox" name="meatTopping" value="pepperoni">Pepperoni<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="meatTopping" value="ham">Ham<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="meatTopping" value="sausage">Sausage<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="meatTopping" value="steak">Steak<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="meatTopping" value="bacon">Bacon<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="meatTopping" value="chicken">Chicken<br>
+              </label><br>   
+
+            </div>
+            <div class="col-md-6">
+              <h3>Non-Meats</h3>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="bannana peppers">Bannana Peppers
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="jalepeno">Jalepeno
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="pineapple">Pineapple
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="red peppers">Roasted Red Pepper<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="tomatoe">Tomatoe<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="mushrooms">Mushrooms<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="olives">Black Olives<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="onion">Onion<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="spinach">Spinach<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="feta">Feta<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="green peppers">Green Peppers<br>
+              </label><br>
+              <label>
+                <input type="checkbox" name="nonMeatTopping" value="avacado">Avacado<br>
+              </label><br>
+
+            </div>
           </div>
         </div>
       </form>

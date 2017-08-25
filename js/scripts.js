@@ -8,7 +8,25 @@ function Pizza(size, crust, sauce, topings) {
   this.crust = crust;
   this.sauce = sauce;
   this.toppings = topings;
+  this.price;
 };
+Pizza.prototype.print = function(){
+  // combine meat and veg toppings
+  var meatAndVeg = []
+  this.toppings.forEach(function(toppingArray){
+    toppingArray.forEach(function(topping){
+      meatAndVeg.push(topping);
+    })
+  })
+  //print out on webpage the current pizza
+  $("#currentPizza").html("<h2>" + this.size + " " + this.crust + " pizza with " + this.sauce +"</h2><br><h3>Toppings: </h3><ul id='toppings'>" + "</ul>" );
+  meatAndVeg.forEach(function(topping){
+    return $("#toppings").append("<li>" + topping + "</li>");
+  })
+}
+Cart.prototype.show = function(){
+
+}
 //front end
 $(document).ready(function() {
   //takes user name as input and creats a new cart for that name
@@ -38,6 +56,7 @@ $(document).ready(function() {
     $("#currentPizza").show();
     $("#viewCart").show();
     $("#newPizza").show();
+    newPizza.print();
   });
    $("#newPizza").click(function(event){
      //removes checkes from checkbox inputs
